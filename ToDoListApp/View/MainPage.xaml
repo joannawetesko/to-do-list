@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="ToDoList.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ToDoList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Page.TopAppBar>
+        <CommandBar Background="Coral">
+            <CommandBar.Content>
+                <TextBlock x:Uid="WelcomeTextBlock" FontFamily="Verdana" FontWeight="Thin"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,20,0,0" />
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <Page.BottomAppBar>
+        <CommandBar Background="Coral">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="OtherUser" HorizontalAlignment="Center" VerticalAlignment="Center" x:Uid="AboutButton" Click="About_Click" />
+            <AppBarButton Icon="Accept" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="LoginButton" x:Uid="LoginButton" Click="Login_Click" />
+
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="PapayaWhip">
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "0.3*" />
+            <RowDefinition Height = "0.4*" />
+            <RowDefinition Height = "0.3*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "0.05*" />
+            <ColumnDefinition Width = "0.9*" />
+            <ColumnDefinition Width = "0.05*" />
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="LightGray" BorderThickness="1" Grid.Row="1" Grid.Column="1" Margin="20,5,10,5" Background="Coral">
+            <Canvas VerticalAlignment="Center" Margin="0,0,0,70">
+                <local:TextBoxWithValidation x:Name="TextBoxControl"/>
+            </Canvas>
+        </Border>
+
+    </Grid>
+</Page>
+

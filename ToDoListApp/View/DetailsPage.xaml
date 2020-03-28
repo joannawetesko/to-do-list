@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="ToDoListApp3.DetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ToDoListApp3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.TopAppBar>
+        <CommandBar Background="Coral">
+            <CommandBar.Content>
+                <TextBlock x:Name="TaskTextBlock"  x:Uid="TaskTextBlock" FontFamily="Verdana" FontWeight="Thin"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,20,0,0"></TextBlock>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <Page.BottomAppBar>
+        <CommandBar Background="Coral">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Back" HorizontalAlignment="Center" x:Name="BackButton" Click="BackButton_Click" Margin="5,5,5,5"/>
+            <AppBarButton Icon="Delete" HorizontalAlignment="Center" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="5,5,50,5"/>
+            <AppBarButton Icon="Edit" HorizontalAlignment="Center" x:Name="EditButton" Click="EditButton_Click" Margin="5,5,5,5"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+
+    <Grid Background="PapayaWhip">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "0.3*" />
+            <RowDefinition Height = "0.7*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="TaskTitleTextBox" x:Uid="TaskTitleTextBox" Width="300"
+                 Text="{ Binding CurrentTask.Title }" Grid.Row="0" Margin="5,15,5,5" Background="PapayaWhip" BorderBrush="LightGray"/>
+
+        <TextBox x:Name="TaskValueTextBox" x:Uid="TaskValueTextBox" Width="300"
+                 Text="{ Binding CurrentTask.Value }" Grid.Row="1" Margin="5,5,5,15" Background="PapayaWhip" BorderBrush="LightGray"/>
+
+    </Grid>
+</Page>
